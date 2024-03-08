@@ -215,6 +215,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &654036792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654036793}
+  m_Layer: 0
+  m_Name: Match Finder
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &654036793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654036792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.7518697, y: 8.483186, z: 0.027742174}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640757152
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +259,7 @@ GameObject:
   m_Layer: 0
   m_Name: Board
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -244,8 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b88c7d2a35050240b494a7ec4a9c692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 1
   width: 7
-  height: 9
+  height: 10
   offSet: 20
   tilePrefab: {fileID: 4182840236647319276, guid: 6aad651ea16eab0449cdb33fb869caba, type: 3}
   dots:
@@ -278,3 +310,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1640757154}
+  - {fileID: 654036793}
