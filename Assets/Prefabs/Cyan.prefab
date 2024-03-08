@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -315484959170632399}
   - component: {fileID: 7828368867973172908}
   m_Layer: 0
-  m_Name: Grey
+  m_Name: Cyan
   m_TagString: Grey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 793d9b9c27c8b6b4c9571bc9f886d575, type: 3}
-  m_Color: {r: 0.48113206, g: 0.5603725, b: 0.6415094, a: 1}
+  m_Color: {r: 0.040850822, g: 0.8149441, b: 0.9622642, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -141,3 +141,4 @@ MonoBehaviour:
   targetY: 0
   isMatched: 0
   swipeAngle: 0
+  swipeResist: 1
