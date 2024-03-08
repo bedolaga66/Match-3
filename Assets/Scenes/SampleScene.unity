@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 7
   height: 9
+  offSet: 20
   tilePrefab: {fileID: 4182840236647319276, guid: 6aad651ea16eab0449cdb33fb869caba, type: 3}
   dots:
   - {fileID: 1419257923348453666, guid: ee3e99aa963542a498e1f79f397e6cbb, type: 3}
@@ -265,7 +266,7 @@ Transform:
   m_GameObject: {fileID: 1640757152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65544987, y: -0.64826965, z: 0.02187305}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
