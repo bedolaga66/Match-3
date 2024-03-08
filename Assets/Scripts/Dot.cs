@@ -52,27 +52,33 @@ public class Dot : MonoBehaviour
         {
             //Move towards target
             tempPosition = new Vector2(targetX, transform.position.y);
-            transform.position = Vector2.Lerp(transform.position, tempPosition, .4f);
+            transform.position = Vector2.Lerp(transform.position, tempPosition, .6f);
+            if (board.allDots[column,row] != this.gameObject)
+            {
+                board.allDots[column, row] = this.gameObject;
+            }
         }
         else
         {
             //Directly set the pos
             tempPosition = new Vector2(targetX, transform.position.y);
             transform.position = tempPosition;
-            board.allDots[column, row] = this.gameObject;
         }
         if (Mathf.Abs(targetY - transform.position.y) > .1)
         {
             //Move towards target
             tempPosition = new Vector2(transform.position.x, targetY);
-            transform.position = Vector2.Lerp(transform.position, tempPosition, .4f);
+            transform.position = Vector2.Lerp(transform.position, tempPosition, .6f);
+            if (board.allDots[column, row] != this.gameObject)
+            {
+                board.allDots[column, row] = this.gameObject;
+            }
         }
         else
         {
             //Directly set the pos
             tempPosition = new Vector2(transform.position.x, targetY);
             transform.position = tempPosition;
-            board.allDots[column, row] = this.gameObject;
         }
     }
 
@@ -88,8 +94,13 @@ public class Dot : MonoBehaviour
                 row = previousRow;
                 column = previousColumn;
             }
+            else
+            {
+                board.DestroyMatches();
+            }
             otherDot = null;
         }
+        
     }
 
     private void OnMouseDown()
@@ -179,5 +190,6 @@ public class Dot : MonoBehaviour
             }
             
         }
+        
     }
 }
