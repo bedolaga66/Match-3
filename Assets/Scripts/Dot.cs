@@ -18,7 +18,7 @@ public class Dot : MonoBehaviour
     public bool isMatched = false;
     private FindMatches findMatches;
     private Board board;
-    private GameObject otherDot;
+    public GameObject otherDot;
 
     private Vector2 firstTouchPosition;
     private Vector2 finalTouchPosition;
@@ -65,12 +65,13 @@ public class Dot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
         if (isMatched)
         {
             SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
             mySprite.color = new Color(1f, 1f, 1f, .2f);
         }
+        */
         targetX = column;
         targetY = row;
         if(Mathf.Abs(targetX - transform.position.x) > .1)
@@ -121,6 +122,7 @@ public class Dot : MonoBehaviour
                 row = previousRow;
                 column = previousColumn;
                 yield return new WaitForSeconds(.5f);
+                board.currentDot = null;
                 board.currentState = GameState.move;
             }
             else
@@ -128,7 +130,7 @@ public class Dot : MonoBehaviour
                 board.DestroyMatches();
                 
             }
-            otherDot = null;
+            //otherDot = null;
         }
         
     }
@@ -159,10 +161,12 @@ public class Dot : MonoBehaviour
             swipeAngle = Mathf.Atan2(finalTouchPosition.y - firstTouchPosition.y, finalTouchPosition.x - firstTouchPosition.x) * 180 / Mathf.PI;
             MovePieces();
             board.currentState = GameState.wait;
+            board.currentDot = this;
         }
         else
         {
             board.currentState = GameState.move;
+            
         }
     }
 
@@ -207,4 +211,17 @@ public class Dot : MonoBehaviour
         StartCoroutine(CheckMoveCo());
     }
 
+    public void MakeRowBomb()
+    {
+        isRowBomb = true;
+        GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
+        arrow.transform.parent = this.transform;
+    }
+
+    public void MakeColumnBomb()
+    {
+        isColumnBomb = true;
+        GameObject arrow = Instantiate(columnArrow, transform.position, Quaternion.identity);
+        arrow.transform.parent = this.transform;
+    }
 }
