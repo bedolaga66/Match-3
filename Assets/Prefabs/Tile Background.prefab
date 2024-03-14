@@ -99,12 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
-  jewels:
-  - {fileID: 4600508857994896426, guid: f15f96ef43231c14488c87d0a8a8d67a, type: 3}
-  - {fileID: 4376742966574414603, guid: 3215e6b08e0bd8f4b880c3ff2a27679c, type: 3}
-  - {fileID: 1096714917526174084, guid: 65279dcc3074cf149b6d6f431331ca0c, type: 3}
-  - {fileID: 1101478706894909916, guid: 843452c7baf33b24ebad1de7c27f6fb8, type: 3}
-  - {fileID: 2087478377785281792, guid: f1bf1102cab095b4d8ea9c17cd4d32ae, type: 3}
 --- !u!114 &-5802971234144119038
 MonoBehaviour:
   m_ObjectHideFlags: 0
