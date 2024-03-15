@@ -30,16 +30,22 @@ public class Dot : MonoBehaviour
     public float swipeResist = 1f;
 
     [Header("Bombs and stuff")]
+    public bool isColorBomb;
     public bool isColumnBomb;
     public bool isRowBomb;
+    public bool isAdjacentBomb;
     public GameObject rowArrow;
     public GameObject columnArrow;
+    public GameObject colorBomb;
+    public GameObject adjacentMarker;
 
     // Start is called before the first frame update
     void Start()
     {
         isColumnBomb = false;
         isRowBomb = false;
+        isColorBomb = false;
+        isAdjacentBomb = false;
 
         board = FindObjectOfType<Board>();
         findMatches = FindObjectOfType<FindMatches>();
@@ -53,13 +59,16 @@ public class Dot : MonoBehaviour
 
     //Test & Debug only
     private void OnMouseOver()
-    {
+    { 
+        
         if (Input.GetMouseButtonDown(1))
         {
-            isRowBomb = true;
-            GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
-            arrow.transform.parent = this.transform;
+            isAdjacentBomb = true;
+            GameObject marker = Instantiate(adjacentMarker, transform.position, Quaternion.identity);
+            marker.transform.parent = this.transform;
         }
+        
+        
     }
 
     // Update is called once per frame
@@ -112,6 +121,17 @@ public class Dot : MonoBehaviour
 
     public IEnumerator CheckMoveCo()
     {
+        if (isColorBomb)
+        {
+            //This piece is a color bomb, and other piece is the color to destroy
+            findMatches.MatchPiecesOfColor(otherDot.tag);
+            isMatched = true;
+        }else if (otherDot.GetComponent<Dot>().isColorBomb)
+        {
+            //The other piece is a color bomb,and this piece have color to destroy
+            findMatches.MatchPiecesOfColor(this.gameObject.tag);
+            otherDot.GetComponent<Dot>().isMatched = true;
+        }
         yield return new WaitForSeconds(.5f);
         if (otherDot != null)
         {
@@ -137,22 +157,25 @@ public class Dot : MonoBehaviour
 
     private void OnMouseDown()
     {
+       
         if(board.currentState == GameState.move)
         {
             firstTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
         }
-        //Debug.Log(firstTouchPosition);
-
+        
     }
 
     private void OnMouseUp()
     {
+        
         if (board.currentState == GameState.move)
         {
             finalTouchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             CalculateAngle();
         }
     }
+
 
     void CalculateAngle()
     {
@@ -213,15 +236,36 @@ public class Dot : MonoBehaviour
 
     public void MakeRowBomb()
     {
+
         isRowBomb = true;
         GameObject arrow = Instantiate(rowArrow, transform.position, Quaternion.identity);
         arrow.transform.parent = this.transform;
+    
     }
 
     public void MakeColumnBomb()
     {
+
         isColumnBomb = true;
         GameObject arrow = Instantiate(columnArrow, transform.position, Quaternion.identity);
         arrow.transform.parent = this.transform;
+    }
+
+    public void MakeColorBomb()
+    {
+
+        isColorBomb = true;
+        GameObject color = Instantiate(colorBomb, transform.position, Quaternion.identity);
+        color.transform.parent = this.transform;
+
+    }
+
+    public void MakeAdjacentBomb()
+    {
+
+        isAdjacentBomb = true;
+        GameObject marker = Instantiate(adjacentMarker, transform.position, Quaternion.identity);
+        marker.transform.parent = this.transform;
+
     }
 }
