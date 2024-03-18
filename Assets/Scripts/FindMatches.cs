@@ -162,6 +162,7 @@ public class FindMatches : MonoBehaviour
                                     currentMatches.Union(IsAdjacentBomb(upDotDot, currentDotDot, downDotDot));
 
                                     GetNearbyPieces(upDot, currentDot, downDot);
+
                                 }
                             }
                         }
