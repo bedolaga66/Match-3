@@ -228,6 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddfd3c2e6006d14082afcd13efcd286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraOffset: -10
+  aspectRatio: 0.625
+  padding: 2
 --- !u!1 &654036792
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,10 +306,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 1
-  width: 14
-  height: 14
-  offSet: 20
+  width: 7
+  height: 10
+  offSet: 10
   tilePrefab: {fileID: 4182840236647319276, guid: 6aad651ea16eab0449cdb33fb869caba, type: 3}
+  breakableTilePrefab: {fileID: 208312659344305624, guid: d161e08020aee1748823365bd7a3e395, type: 3}
   dots:
   - {fileID: 1419257923348453666, guid: ee3e99aa963542a498e1f79f397e6cbb, type: 3}
   - {fileID: 7738905053625909627, guid: a73dfaf5de2cc4f4cb5e74e5add8b8e0, type: 3}
@@ -317,6 +321,43 @@ MonoBehaviour:
   - {fileID: 2819360579467406362, guid: 3d37147bc6c4f11468da4ac6446dee59, type: 3}
   - {fileID: 4342755759734752344, guid: 81385ff96111039419306475f4dbf2bf, type: 3}
   destroyEffect: {fileID: 7128214479776248074, guid: 3926b67bc7e46d34c98b657d95b07778, type: 3}
+  boardLayout:
+  - x: 0
+    y: 0
+    tileKind: 1
+  - x: 6
+    y: 9
+    tileKind: 1
+  - x: 6
+    y: 0
+    tileKind: 1
+  - x: 0
+    y: 9
+    tileKind: 1
+  - x: 4
+    y: 4
+    tileKind: 1
+  - x: 5
+    y: 4
+    tileKind: 1
+  - x: 3
+    y: 4
+    tileKind: 1
+  - x: 2
+    y: 4
+    tileKind: 1
+  - x: 1
+    y: 4
+    tileKind: 1
+  - x: 1
+    y: 5
+    tileKind: 0
+  - x: 1
+    y: 6
+    tileKind: 0
+  - x: 1
+    y: 7
+    tileKind: 0
   currentDot: {fileID: 0}
   refillDelay: 0.5
 --- !u!4 &1640757154
