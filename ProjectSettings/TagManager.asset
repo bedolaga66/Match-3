@@ -13,6 +13,7 @@ TagManager:
   - WhiteMint
   - Cyan
   - Grey
+  - Color
   layers:
   - Default
   - TransparentFX
