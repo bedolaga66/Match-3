@@ -49,6 +49,7 @@ public class Board : MonoBehaviour
 
     public float refillDelay = 0.5f;
 
+    public int[] scoreGoals;
 
     void Start()
     {
