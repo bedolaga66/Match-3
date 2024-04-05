@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 859356981160561549}
   - component: {fileID: 4606392285225422176}
   - component: {fileID: 5988773845958447192}
+  - component: {fileID: 3905992417238060013}
   m_Layer: 5
   m_Name: Goal Prefab
   m_TagString: Untagged
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.69411767}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -152,6 +153,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3905992417238060013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104860190664703826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc0de0b03065414396f2d35272a313f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisImage: {fileID: 2730425728922761294}
+  thisSprite: {fileID: 0}
+  thisText: {fileID: 4281938945232796283}
+  thisString: 
 --- !u!1 &7197369118116186907
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,10 +201,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 859356981160561549}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.37, y: 0.06666667}
-  m_AnchorMax: {x: 0.62945163, y: 0.25}
-  m_AnchoredPosition: {x: 0, y: 0.20000076}
-  m_SizeDelta: {x: 0, y: -0.46899986}
+  m_AnchorMin: {x: 0.08428572, y: 0.083333336}
+  m_AnchorMax: {x: 0.9151429, y: 0.25}
+  m_AnchoredPosition: {x: -0.0004043579, y: -0.29999924}
+  m_SizeDelta: {x: -0.0009994507, y: 0.531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4980947823827573836
 CanvasRenderer:
