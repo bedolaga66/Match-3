@@ -973,7 +973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 3.0385418
+  m_AspectRatio: 3.0429494
 --- !u!114 &388751196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraOffset: -10
   aspectRatio: 0.625
-  padding: 2
+  padding: 3
   yOffset: 0.5
 --- !u!1 &647819072
 GameObject:
@@ -2076,7 +2076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000016689, y: 0.0000076293945}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 220, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628531315
@@ -2207,25 +2207,7 @@ MonoBehaviour:
   - {fileID: 5481469874351939755, guid: 9417598a39da6af48abe31b0e2821de7, type: 3}
   - {fileID: 4342755759734752344, guid: 81385ff96111039419306475f4dbf2bf, type: 3}
   destroyEffect: {fileID: 7128214479776248074, guid: 3926b67bc7e46d34c98b657d95b07778, type: 3}
-  boardLayout:
-  - x: 0
-    y: 0
-    tileKind: 1
-  - x: 5
-    y: 0
-    tileKind: 1
-  - x: 5
-    y: 7
-    tileKind: 1
-  - x: 0
-    y: 7
-    tileKind: 1
-  - x: 3
-    y: 3
-    tileKind: 1
-  - x: 3
-    y: 4
-    tileKind: 1
+  boardLayout: []
   currentDot: {fileID: 0}
   basePieceValue: 20
   refillDelay: 0.5
@@ -2411,7 +2393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 2
+  m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 500, y: 800}
   m_ScreenMatchMode: 0
