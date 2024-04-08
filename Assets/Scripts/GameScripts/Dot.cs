@@ -19,6 +19,8 @@ public class Dot : MonoBehaviour
 
     private HintManager hintManager;
 
+    private EndGameManager endGameManager;
+
     private FindMatches findMatches;
     private Board board;
     public GameObject otherDot;
@@ -41,6 +43,8 @@ public class Dot : MonoBehaviour
     public GameObject columnArrow;
     public GameObject colorBomb;
     public GameObject adjacentMarker;
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +54,7 @@ public class Dot : MonoBehaviour
         isColorBomb = false;
         isAdjacentBomb = false;
 
+        endGameManager = FindObjectOfType<EndGameManager>();
         hintManager = FindObjectOfType<HintManager>();
         board = FindObjectOfType<Board>();
         findMatches = FindObjectOfType<FindMatches>();
@@ -151,6 +156,13 @@ public class Dot : MonoBehaviour
             }
             else
             {
+                if (endGameManager != null)
+                {
+                    if(endGameManager.requiremenets.gameType == GameType.Moves)
+                    {
+                        endGameManager.DecreaseCounterValue();
+                    }
+                }
                 board.DestroyMatches();
                 
             }

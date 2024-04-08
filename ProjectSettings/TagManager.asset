@@ -14,6 +14,7 @@ TagManager:
   - Cyan
   - Grey
   - Color
+  - Breakable
   layers:
   - Default
   - TransparentFX
