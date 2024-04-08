@@ -47,12 +47,15 @@ public class Board : MonoBehaviour
 
     private SoundManager soundManager;
 
+    private GoalManager goalManager;
+
     public float refillDelay = 0.5f;
 
     public int[] scoreGoals;
 
     void Start()
     {
+        goalManager = FindObjectOfType<GoalManager>();
         soundManager = FindObjectOfType<SoundManager>();
         scoreManager = FindObjectOfType<ScoreManager>();
         breakableTiles = new BackgroundTile[width, height];
@@ -288,6 +291,11 @@ public class Board : MonoBehaviour
                 {
                     breakableTiles[column, row] = null;
                 }
+            }
+            if (goalManager != null)
+            {
+                goalManager.CompareGoal(allDots[column, row].tag.ToString());
+                goalManager.UpdateGoals();
             }
             //Does the sound manager exist?
             if (soundManager != null)
