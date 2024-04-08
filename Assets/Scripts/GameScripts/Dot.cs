@@ -67,8 +67,8 @@ public class Dot : MonoBehaviour
         
         if (Input.GetMouseButtonDown(1))
         {
-            isAdjacentBomb = true;
-            GameObject marker = Instantiate(adjacentMarker, transform.position, Quaternion.identity);
+            isRowBomb = true;
+            GameObject marker = Instantiate(rowArrow, transform.position, Quaternion.identity);
             marker.transform.parent = this.transform;
         }
         

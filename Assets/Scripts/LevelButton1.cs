@@ -13,6 +13,7 @@ public class LevelButton1 : MonoBehaviour
     public Button Level6;
     int levelComplete;
 
+    public bool isTransitionCompleted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +42,10 @@ public class LevelButton1 : MonoBehaviour
                 break;
         }
     }
+    
+
     public void LoadTo(int Level)
     {
-        SceneManager.LoadScene(Level);
+        SceneManager.LoadScene(Level);   
     }
 }
