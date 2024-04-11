@@ -28,7 +28,10 @@ public class TileType
 
 public class Board : MonoBehaviour
 {
-    
+    [Header("Scriptable Object Stuff")]
+    public World world;
+    public int level;
+
     public GameState currentState = GameState.move;
     public int width;
     public int height;
@@ -55,6 +58,28 @@ public class Board : MonoBehaviour
     public float refillDelay = 0.5f;
 
     public int[] scoreGoals;
+
+    private void Awake()
+    {
+        if(PlayerPrefs.HasKey("Current Level"))
+        {
+            level = PlayerPrefs.GetInt("Current Level");
+        }
+        if (world != null)
+        {
+            if (level < world.levels.Length)
+            {
+                if (world.levels[level] != null)
+                {
+                    width = world.levels[level].width;
+                    height = world.levels[level].height;
+                    dots = world.levels[level].dots;
+                    scoreGoals = world.levels[level].scoreGoals;
+                    boardLayout = world.levels[level].boardLayout;
+                }
+            }
+        }
+    }
 
     void Start()
     {

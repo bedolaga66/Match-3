@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ChooseScene.unity
     guid: 86c50364f7b4e184db2833a42445206f
+  - enabled: 1
+    path: Assets/Scenes/TropaModified.unity
+    guid: b4246b5d4403f114ca334a3303f83856
   m_configObjects: {}

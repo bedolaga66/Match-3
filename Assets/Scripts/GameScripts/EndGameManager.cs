@@ -17,6 +17,7 @@ public class EndGameRequiremenets
 
 public class EndGameManager : MonoBehaviour
 {
+    
     public GameObject movesLabel;
     //public GameObject timeLabel; //FOR TIME INSTEAD OF MOVES
     public Text counter;
@@ -31,7 +32,22 @@ public class EndGameManager : MonoBehaviour
     void Start()
     {
         board = FindObjectOfType<Board>();
+        SetGameType();
         SetupGame();
+    }
+
+    void SetGameType()
+    {
+        if (board.world != null)
+        {
+            if (board.level < board.world.levels.Length)
+            {
+                if (board.world.levels[board.level] != null)
+                {
+                    requiremenets = board.world.levels[board.level].endGameRequiremenets;
+                }
+            }
+        }
     }
 
     void SetupGame()
