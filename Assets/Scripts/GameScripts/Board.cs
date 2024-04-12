@@ -454,6 +454,7 @@ public class Board : MonoBehaviour
 
     private IEnumerator FillBoardCo()
     {
+        
         RefillBoard();
         yield return new WaitForSeconds(refillDelay);
         
@@ -473,8 +474,13 @@ public class Board : MonoBehaviour
             ShuffleBoard();
             Debug.Log("Deadlocked!");
         }
-        currentState = GameState.move;
+        System.GC.Collect();
+        if (currentState != GameState.pause)
+        {
+            currentState = GameState.move;
+        }
         streakValue = 1;
+        
     }
 
     private void SwitchPieces(int column, int row, Vector2 direction)

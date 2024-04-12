@@ -192,6 +192,7 @@ public class FindMatches : MonoBehaviour
         }
     }
 
+
     List<GameObject> GetAdjacentPieces(int column, int row)
     {
         List<GameObject> dots = new List<GameObject>();

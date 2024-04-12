@@ -72,9 +72,9 @@ public class Dot : MonoBehaviour
         
         if (Input.GetMouseButtonDown(1))
         {
-            isRowBomb = true;
-            GameObject marker = Instantiate(rowArrow, transform.position, Quaternion.identity);
-            marker.transform.parent = this.transform;
+            isAdjacentBomb = true;
+            GameObject Adjacent = Instantiate(adjacentMarker, transform.position, Quaternion.identity);
+            Adjacent.transform.parent = this.transform;
         }
         
         
@@ -141,6 +141,7 @@ public class Dot : MonoBehaviour
             findMatches.MatchPiecesOfColor(this.gameObject.tag);
             otherDot.GetComponent<Dot>().isMatched = true;
         }
+        
         yield return new WaitForSeconds(.5f);
         if (otherDot != null)
         {
@@ -171,6 +172,7 @@ public class Dot : MonoBehaviour
         
     }
 
+    
     private void OnMouseDown()
     {
        //Destroy hint
