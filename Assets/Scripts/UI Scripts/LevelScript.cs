@@ -58,5 +58,6 @@ public class LevelScript : MonoBehaviour
         }
 
         gameData.saveData.isActive[currLevel + 1] = true;
+        gameData.Save();
     }
 }
