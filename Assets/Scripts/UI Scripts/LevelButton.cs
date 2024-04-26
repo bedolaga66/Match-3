@@ -13,6 +13,12 @@ public class LevelButton : MonoBehaviour
     public GameData gameData;
 
     public string levelToLoad;
+
+    void Awake()
+    {
+        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,20 +29,26 @@ public class LevelButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
-    void LoadData()
+    
+
+    public void LoadData()
     {
         if(gameData != null)
         {
-            if (gameData.saveData.isActive[level])
+            
+            for (int i = 0; i < Levels.Length; i++)
             {
-                Levels[level].interactable = true;
-            }
-            else
-            {
-                Levels[level].interactable = false;
+                if (gameData.saveData.isActive[i])
+                {
+                    Levels[i].interactable = true;
+                }
+                else
+                {
+                    Levels[i].interactable = false;
+                }
             }
         }
     }

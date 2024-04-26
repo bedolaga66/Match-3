@@ -7,6 +7,6 @@ public class Dialog3Scene : MonoBehaviour
 {
     public void OnClickLoadScene3()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene("TropaModified");
     }
 }
