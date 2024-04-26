@@ -20,4 +20,6 @@ public class GoalPanel : MonoBehaviour
         thisImage.sprite = thisSprite;
         thisText.text = thisString;
     }
+
+    
 }

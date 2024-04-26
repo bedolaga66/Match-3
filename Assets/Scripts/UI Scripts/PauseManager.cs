@@ -78,6 +78,6 @@ public class PauseManager : MonoBehaviour
         paused = !paused;
     }
     public void ExitGame() {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
     }
 }
