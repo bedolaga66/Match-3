@@ -16,23 +16,11 @@ MonoBehaviour:
   height: 7
   boardLayout:
   - x: 2
-    y: 4
-    tileKind: 1
-  - x: 0
-    y: 4
-    tileKind: 1
-  - x: 4
-    y: 4
-    tileKind: 1
-  - x: 2
+    y: 2
+    tileKind: 0
+  - x: 3
     y: 3
-    tileKind: 1
-  - x: 0
-    y: 3
-    tileKind: 1
-  - x: 4
-    y: 3
-    tileKind: 1
+    tileKind: 0
   dots:
   - {fileID: 1419257923348453666, guid: ee3e99aa963542a498e1f79f397e6cbb, type: 3}
   - {fileID: 7738905053625909627, guid: a73dfaf5de2cc4f4cb5e74e5add8b8e0, type: 3}
@@ -46,14 +34,14 @@ MonoBehaviour:
     counterValue: 40
   levelGoals:
   - numberNeeded: 20
-    numberCollected: 0
+    numberCollected: 3
     goalSprite: {fileID: 21300000, guid: 1cb8e456a7bc6a14d9f9ea8f717c98d5, type: 3}
     matchValue: Orange
   - numberNeeded: 15
-    numberCollected: 0
+    numberCollected: 3
     goalSprite: {fileID: 21300000, guid: d6185821bde55ef4aad21d9328c264e7, type: 3}
     matchValue: Green
   - numberNeeded: 2
-    numberCollected: 0
-    goalSprite: {fileID: 21300000, guid: ab9fb3d48d2bb8e438a1abc532fd6494, type: 3}
+    numberCollected: 1
+    goalSprite: {fileID: 21300000, guid: f2c6e16893bf33b4eb277f15ec7f0fa9, type: 3}
     matchValue: Breakable

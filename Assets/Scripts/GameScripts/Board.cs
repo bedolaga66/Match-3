@@ -594,8 +594,8 @@ public class Board : MonoBehaviour
         {
             streakValue++;
             DestroyMatches();
-            yield break;
-            //yield return new WaitForSeconds(2 * refillDelay);
+            //yield break;
+            yield return new WaitForSeconds(2 * refillDelay);
             
         }
 

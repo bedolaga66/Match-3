@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackgroundTile : MonoBehaviour
 {
+    public Sprite spriteAfterOneHit;
     public int hitPoints;
     private SpriteRenderer sprite;
     private GoalManager goalManager;
@@ -30,15 +31,11 @@ public class BackgroundTile : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hitPoints -= damage;
-        MakeLighter();
+        ChangeSprite();
     }
     
-    void MakeLighter()
+    void ChangeSprite()
     {
-        //take the curr color
-        Color color = sprite.color;
-        //get the curr color alpha val and cut in half
-        float newAlpha = color.a * .5f;
-        sprite.color = new Color(color.r,color.g,color.b, newAlpha);
+        sprite.sprite = spriteAfterOneHit;
     }
 }
