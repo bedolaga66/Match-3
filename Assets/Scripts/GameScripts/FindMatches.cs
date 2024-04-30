@@ -100,7 +100,8 @@ public class FindMatches : MonoBehaviour
 
     private IEnumerator FindAllMatchesCo()
     {
-        yield return new WaitForSeconds(.2f);
+        //yield return new WaitForSeconds(.2f);
+        yield return null;
         for (int i = 0; i < board.width; i++)
         {
             for (int j = 0; j < board.height; j++)
@@ -251,13 +252,13 @@ public class FindMatches : MonoBehaviour
         return dots;
     }
 
-    public void CheckBombs()
+    public void CheckBombs(MatchType matchType)
     {
         //Move check
         if (board.currentDot != null)
         {
             //Moved thing matched?
-            if (board.currentDot.isMatched)
+            if (board.currentDot.isMatched && board.currentDot.tag == matchType.color)
             {
                 //Make it unmatched
                 board.currentDot.isMatched = false;
@@ -289,7 +290,7 @@ public class FindMatches : MonoBehaviour
             {
                 Dot otherDot = board.currentDot.otherDot.GetComponent<Dot>();
                 //Is the other dot matched?
-                if (otherDot.isMatched)
+                if (otherDot.isMatched && otherDot.tag == matchType.color)
                 {
                     otherDot.isMatched = false;
                     //Decide what king of bomb to make

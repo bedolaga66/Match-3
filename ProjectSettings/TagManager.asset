@@ -15,6 +15,7 @@ TagManager:
   - Grey
   - Color
   - Breakable
+  - Board
   layers:
   - Default
   - TransparentFX

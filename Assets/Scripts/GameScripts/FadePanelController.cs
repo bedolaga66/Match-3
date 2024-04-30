@@ -31,4 +31,9 @@ public class FadePanelController : MonoBehaviour
         board = FindObjectOfType<Board>();
         board.currentState = GameState.move;
     }
+
+    IEnumerator MenuStartCo()
+    {
+        yield return new WaitForSeconds(1f);
+    }
 }
