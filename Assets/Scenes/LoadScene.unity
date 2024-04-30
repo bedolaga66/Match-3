@@ -229,14 +229,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneID: 1
-  Levels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  gameData: {fileID: 1092719755}
   loadSlider: {fileID: 696895965}
 --- !u!1 &696895963
 GameObject:
@@ -273,8 +265,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: -611}
-  m_SizeDelta: {x: 2400, y: 158.56}
+  m_AnchoredPosition: {x: -5.37, y: -606.98}
+  m_SizeDelta: {x: 769.45, y: 150.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696895965
 MonoBehaviour:
@@ -361,8 +353,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -605}
-  m_SizeDelta: {x: 879.74, y: 62.48}
+  m_AnchoredPosition: {x: -3.9, y: -607.43}
+  m_SizeDelta: {x: 751.19, y: 67.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780567633
 MonoBehaviour:
@@ -668,17 +660,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
---- !u!114 &1092719755 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2712565152564045274, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
-  m_PrefabInstance: {fileID: 1092719754}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a73701f216c45d41a990892d0a9dffd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1346846198
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +954,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1656335185
