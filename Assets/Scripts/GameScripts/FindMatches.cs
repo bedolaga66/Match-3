@@ -171,6 +171,7 @@ public class FindMatches : MonoBehaviour
                 }
             }
         }
+        //yield return null;
     }
 
     public void MatchPiecesOfColor(string color)
@@ -261,7 +262,7 @@ public class FindMatches : MonoBehaviour
             if (board.currentDot.isMatched && board.currentDot.tag == matchType.color)
             {
                 //Make it unmatched
-                board.currentDot.isMatched = false;
+                board.currentDot.isMatched = false;      //????                             //BUG WITH 3-4-5 FALL & NO-MATCH
                 //Decide what king of bomb to make
                 /*
                 int typeOfBomb = Random.Range(0, 100);
@@ -292,7 +293,7 @@ public class FindMatches : MonoBehaviour
                 //Is the other dot matched?
                 if (otherDot.isMatched && otherDot.tag == matchType.color)
                 {
-                    otherDot.isMatched = false;
+                    otherDot.isMatched = false;                                       //BUG WITH 3-4-5 FALL & NO-MATCH
                     //Decide what king of bomb to make
                     /*
                     int typeOfBomb = Random.Range(0, 100);

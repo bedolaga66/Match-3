@@ -13,13 +13,15 @@ public class InGameManageButtons : MonoBehaviour
     public Button[] buttonsToMainMenu;
 
     private string levelToLoad;
-    private string menuScene;
+    private string menuScene1;
+    private string menuScene2;
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
         levelToLoad = SceneManager.GetActiveScene().name;
-        menuScene = "TropaModified";
+        menuScene1 = "TropaModified";
+        menuScene2 = "Tropa2Scene";
     }
 
     // Update is called once per frame
@@ -48,6 +50,11 @@ public class InGameManageButtons : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene(menuScene);
+        if(level >= 0 && level <= 5)
+        {
+            SceneManager.LoadScene(menuScene1);
+        }
+        else if(level >= 6 && level <= 11) SceneManager.LoadScene(menuScene2);
     }
+
 }

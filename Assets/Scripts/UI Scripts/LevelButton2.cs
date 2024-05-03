@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class LevelButton : MonoBehaviour
+public class LevelButton2 : MonoBehaviour
 {
     public Button[] Levels;
 
@@ -16,7 +16,7 @@ public class LevelButton : MonoBehaviour
 
     void Awake()
     {
-        
+
     }
 
     // Start is called before the first frame update
@@ -29,71 +29,28 @@ public class LevelButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    
+
 
     public void LoadData()
     {
-        if(gameData != null)
+        if (gameData != null)
         {
-            
+
             for (int i = 0; i < Levels.Length; i++)
             {
-                if (gameData.saveData.isActive[i])
+                if (gameData.saveData.isActive[i + 6])
                 {
                     Levels[i].interactable = true;
-                    
                 }
-                else
+                else if (!gameData.saveData.isActive[i + 6])
                 {
                     Levels[i].interactable = false;
                 }
-                
-            }
-            for(int i = 0; i < Levels.Length - 1; i++)
-            {
-                if (Levels[i + 1].interactable)
-                {
-                    Levels[i].image.color = Color.green;
-                }
-                else
-                {
-                    continue;
-                }
             }
         }
-    }
-
-    public void level1Button()
-    {
-        level = 0;
-    }
-
-    public void level2Button()
-    {
-        level = 1;
-    }
-
-    public void level3Button()
-    {
-        level = 2;
-    }
-
-    public void level4Button()
-    {
-        level = 3;
-    }
-
-    public void level5Button()
-    {
-        level = 4;
-    }
-
-    public void level6Button()
-    {
-        level = 5;
     }
 
     public void level7Button()

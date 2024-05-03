@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 78838929}
   - component: {fileID: 78838928}
   - component: {fileID: 78838927}
+  - component: {fileID: 78838930}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -206,9 +207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
-        m_MethodName: level4Button
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
+        m_MethodName: level10Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -218,8 +219,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -268,6 +269,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78838925}
   m_CullTransparentMesh: 1
+--- !u!114 &78838930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78838925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f998e3548633054b9b1102df757e1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 1826201803}
+  levelCompleted: 0
+  currLevel: 0
 --- !u!1 &79933624
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,10 +391,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2071534575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.058000002, y: 0.08380245}
+  m_AnchorMax: {x: 0.9323342, y: 0.94100004}
+  m_AnchoredPosition: {x: 1, y: -2.4999924}
+  m_SizeDelta: {x: -4.200001, y: 2.7000008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117582812
 MonoBehaviour:
@@ -405,8 +421,8 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -484,8 +500,8 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -635,6 +651,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165503067}
   m_CullTransparentMesh: 1
+--- !u!1001 &219437899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7125811356047740169, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_Name
+      value: Game Data
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 193.95015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 357.76672
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 135471.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395039882506352025, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
 --- !u!1 &230439473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,8 +1267,8 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1252,7 +1325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6961457, y: 0.58827156}
   m_AnchorMax: {x: 0.915, y: 0.707}
-  m_AnchoredPosition: {x: 0.5, y: -0.099998474}
+  m_AnchoredPosition: {x: 0.5, y: -0.1000061}
   m_SizeDelta: {x: -0.83000183, y: 2.7860107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431803085
@@ -1390,7 +1463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.015}
   m_AnchorMin: {x: 0.41514564, y: 0.43836427}
   m_AnchorMax: {x: 0.6358544, y: 0.563}
-  m_AnchoredPosition: {x: 0.8959999, y: -0.93299866}
+  m_AnchoredPosition: {x: 0.8959961, y: -0.93299866}
   m_SizeDelta: {x: 0.16999817, y: -0.21400452}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435105448
@@ -1996,6 +2069,7 @@ GameObject:
   - component: {fileID: 595099098}
   - component: {fileID: 595099097}
   - component: {fileID: 595099096}
+  - component: {fileID: 595099099}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2067,9 +2141,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
-        m_MethodName: level3Button
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
+        m_MethodName: level9Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2079,8 +2153,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -2129,6 +2203,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595099094}
   m_CullTransparentMesh: 1
+--- !u!114 &595099099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595099094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f998e3548633054b9b1102df757e1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 1826201803}
+  levelCompleted: 0
+  currLevel: 0
 --- !u!1 &597904879
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2308,7 @@ GameObject:
   - component: {fileID: 677367960}
   - component: {fileID: 677367959}
   - component: {fileID: 677367958}
+  - component: {fileID: 677367961}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -2233,18 +2323,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677367957}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1336eb00566442444b366dcc71213e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Levels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1955829332}
+  - {fileID: 1263568232}
+  - {fileID: 595099096}
+  - {fileID: 78838927}
+  - {fileID: 2071534576}
+  - {fileID: 731697884}
   level: 0
   gameData: {fileID: 0}
   levelToLoad: SampleScene
@@ -2281,6 +2371,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &677367961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677367957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a763a9e0cd0e449b2c65dfafbf0ae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Levels:
+  - {fileID: 1955829332}
+  - {fileID: 1263568232}
+  - {fileID: 595099096}
+  - {fileID: 78838927}
+  - {fileID: 2071534576}
+  - {fileID: 731697884}
+  level: 0
+  gameData: {fileID: 2712565152564045274, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+  levelToLoad: SampleScene
 --- !u!1 &690659698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,6 +2484,7 @@ GameObject:
   - component: {fileID: 731697886}
   - component: {fileID: 731697885}
   - component: {fileID: 731697884}
+  - component: {fileID: 731697887}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2443,9 +2556,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
-        m_MethodName: level6Button
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
+        m_MethodName: level12Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2455,8 +2568,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -2505,6 +2618,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731697882}
   m_CullTransparentMesh: 1
+--- !u!114 &731697887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731697882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f998e3548633054b9b1102df757e1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 1826201803}
+  levelCompleted: 0
+  currLevel: 0
 --- !u!1 &731921747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,10 +3104,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1478641960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 141.32, y: -294.3}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchorMin: {x: 0.71422225, y: 0.0174375}
+  m_AnchorMax: {x: 0.9496666, y: 0.14731249}
+  m_AnchoredPosition: {x: 0, y: -1.0002441}
+  m_SizeDelta: {x: -13, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &887921641
 MonoBehaviour:
@@ -3025,10 +3153,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 78838926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.04275189, y: 0.038000003}
+  m_AnchorMax: {x: 0.8954963, y: 0.943}
+  m_AnchoredPosition: {x: -0.099998474, y: -1.300003}
+  m_SizeDelta: {x: -3.0999985, y: -4.8999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888725027
 MonoBehaviour:
@@ -3055,8 +3183,8 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3113,7 +3241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.011}
   m_AnchorMin: {x: 0.38114563, y: 0.24436428}
   m_AnchorMax: {x: 0.599437, y: 0.36400002}
-  m_AnchoredPosition: {x: 0, y: -0.1000061}
+  m_AnchoredPosition: {x: 0, y: -0.10003662}
   m_SizeDelta: {x: 0.16999817, y: 2.7859993}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963805023
@@ -3543,7 +3671,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17084175, y: 0}
   m_AnchorMax: {x: 0.82913136, y: 0.66400003}
-  m_AnchoredPosition: {x: 0, y: -0.59000015}
+  m_AnchoredPosition: {x: 0, y: -0.58999634}
   m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263568231
@@ -3558,7 +3686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f998e3548633054b9b1102df757e1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 0}
+  gameData: {fileID: 1826201803}
   levelCompleted: 0
   currLevel: 0
 --- !u!114 &1263568232
@@ -3605,9 +3733,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
-        m_MethodName: level2Button
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
+        m_MethodName: level8Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3617,8 +3745,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -4282,7 +4410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 1.352, z: 0}
   m_AnchorMin: {x: 0.6164371, y: 0.17036428}
   m_AnchorMax: {x: 0.87371856, y: 0.31300002}
-  m_AnchoredPosition: {x: 1, y: -0.1000061}
+  m_AnchoredPosition: {x: 1, y: -0.099975586}
   m_SizeDelta: {x: 1.7000122, y: 1.9000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617025692
@@ -4355,10 +4483,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 731697883}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.076000005, y: 0.11657459}
+  m_AnchorMax: {x: 0.8622541, y: 0.94656724}
+  m_AnchoredPosition: {x: 0.5999985, y: -1.199997}
+  m_SizeDelta: {x: -2.2000008, y: -0.40000153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1631440050
 MonoBehaviour:
@@ -4386,7 +4514,7 @@ MonoBehaviour:
     m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4765,6 +4893,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812631407}
   m_CullTransparentMesh: 1
+--- !u!114 &1826201803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2712565152564045274, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+  m_PrefabInstance: {fileID: 219437899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a73701f216c45d41a990892d0a9dffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1891576108
 GameObject:
   m_ObjectHideFlags: 0
@@ -4902,8 +5041,8 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4971,7 +5110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f998e3548633054b9b1102df757e1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData: {fileID: 0}
+  gameData: {fileID: 1826201803}
   levelCompleted: 0
   currLevel: 0
 --- !u!114 &1955829332
@@ -5018,9 +5157,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
-        m_MethodName: level1Button
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
+        m_MethodName: level7Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5030,8 +5169,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -5301,6 +5440,7 @@ GameObject:
   - component: {fileID: 2071534578}
   - component: {fileID: 2071534577}
   - component: {fileID: 2071534576}
+  - component: {fileID: 2071534579}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5325,7 +5465,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17084175, y: 0}
   m_AnchorMax: {x: 0.82913136, y: 0.66400003}
-  m_AnchoredPosition: {x: 0.35170937, y: -0.5900116}
+  m_AnchoredPosition: {x: 0.35170746, y: -0.5900116}
   m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2071534576
@@ -5372,9 +5512,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
-        m_MethodName: level5Button
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
+        m_MethodName: level11Button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5384,8 +5524,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelButton, Assembly-CSharp
+      - m_Target: {fileID: 677367961}
+        m_TargetAssemblyTypeName: LevelButton2, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -5434,6 +5574,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2071534574}
   m_CullTransparentMesh: 1
+--- !u!114 &2071534579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071534574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f998e3548633054b9b1102df757e1da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 1826201803}
+  levelCompleted: 0
+  currLevel: 0
 --- !u!1 &2089963152
 GameObject:
   m_ObjectHideFlags: 0
@@ -5592,3 +5747,4 @@ SceneRoots:
   - {fileID: 1478641960}
   - {fileID: 677367960}
   - {fileID: 464841427}
+  - {fileID: 219437899}

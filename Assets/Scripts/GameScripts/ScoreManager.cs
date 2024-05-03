@@ -10,17 +10,20 @@ public class ScoreManager : MonoBehaviour
     public int score;
     public Image scoreBar;
 
+    private GameData gameData;
+    private int[] levelScoreGoals;
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
+        gameData = FindObjectOfType<GameData>();
     }
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = score.ToString() + "/" + UpdateScoreToGoalAmount(score).ToString();
-        
+        AddScoreResultsToGameData(board.level);
     }
 
     public void IncreaseScore(int amountToIncrease)
@@ -58,4 +61,22 @@ public class ScoreManager : MonoBehaviour
             scoreBar.fillAmount = (float)score / (float)board.scoreGoals[len - 1];
         }
     }
+
+    public void AddScoreResultsToGameData(int level)
+    {
+        if (board.currentState == GameState.win)
+        {
+            if (gameData != null)
+            {
+                if (gameData.saveData.highScores[level] != 0 && gameData.saveData.highScores[level] < score)
+                    gameData.saveData.highScores[level] = score;
+                else if (gameData.saveData.highScores[level] > score) return;
+                else if (gameData.saveData.highScores[level] == 0) gameData.saveData.highScores[level] = score;
+            }
+            gameData.Save();
+
+        }
+        
+    }
+
 }

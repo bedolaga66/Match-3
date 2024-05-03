@@ -592,8 +592,14 @@ public class Board : MonoBehaviour
         yield return new WaitForSeconds(refillDelay);
         while (MatchesOnBoard())
         {
+            //yield return new WaitForSeconds(refillDelay);
             streakValue++;
             DestroyMatches();
+            //while (MatchesOnBoard())
+            //{
+            //    streakValue++;
+            //    DestroyMatches();
+            //}
             //yield break;
             yield return new WaitForSeconds(2 * refillDelay);
             
@@ -618,13 +624,16 @@ public class Board : MonoBehaviour
 
     private void SwitchPieces(int column, int row, Vector2 direction)
     {
-        //Take the second piece and save it in a holder
-        GameObject holder = allDots[column + (int)direction.x, row + (int)direction.y] as GameObject;
-        //switching first dot to be the second pos
-        allDots[column + (int)direction.x, row + (int)direction.y] =
-            allDots[column, row];
-        //set the first dot to be second dot
-        allDots[column, row] = holder;
+        if (allDots[column + (int)direction.x, row + (int)direction.y])
+        {
+            //Take the second piece and save it in a holder
+            GameObject holder = allDots[column + (int)direction.x, row + (int)direction.y] as GameObject;
+            //switching first dot to be the second pos
+            allDots[column + (int)direction.x, row + (int)direction.y] =
+                allDots[column, row];
+            //set the first dot to be second dot
+            allDots[column, row] = holder;
+        }
     }
 
     private bool CheckForMatches()
