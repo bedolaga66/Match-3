@@ -611,6 +611,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2712565152564045274, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: saveData.stars.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712565152564045274, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: saveData.isActive.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712565152564045274, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: saveData.highScores.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712565152564045274, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
+      propertyPath: saveData.isActive.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7125811356047740169, guid: 12323ceb61381854e8e03168f5e5059e, type: 3}
       propertyPath: m_Name
       value: Game Data
