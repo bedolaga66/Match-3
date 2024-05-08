@@ -76,6 +76,7 @@ public class StarsScript : MonoBehaviour
             star2.SetActive(true);
             star3.SetActive(true);
         }
+        currentHighScore = 0;
     }
     
 }

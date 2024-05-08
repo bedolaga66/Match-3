@@ -854,6 +854,7 @@ GameObject:
   - component: {fileID: 243107188}
   - component: {fileID: 243107187}
   - component: {fileID: 243107186}
+  - component: {fileID: 243107189}
   m_Layer: 5
   m_Name: Level12
   m_TagString: Untagged
@@ -980,6 +981,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243107184}
   m_CullTransparentMesh: 1
+--- !u!114 &243107189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243107184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99e4fbdb17bfa41a467f0b1f7aef23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScoreGoals: 000000000000000000000000
+  level: 11
+  ButtonAndStarObject: {fileID: 243107184}
+  currentHighScore: 0
 --- !u!1 &251537439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1313,7 @@ GameObject:
   - component: {fileID: 431803087}
   - component: {fileID: 431803086}
   - component: {fileID: 431803085}
+  - component: {fileID: 431803088}
   m_Layer: 5
   m_Name: Level11
   m_TagString: Untagged
@@ -1422,6 +1440,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431803083}
   m_CullTransparentMesh: 1
+--- !u!114 &431803088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431803083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99e4fbdb17bfa41a467f0b1f7aef23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScoreGoals: 000000000000000000000000
+  level: 10
+  ButtonAndStarObject: {fileID: 431803083}
+  currentHighScore: 0
 --- !u!1 &435105446
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,6 +1468,7 @@ GameObject:
   - component: {fileID: 435105450}
   - component: {fileID: 435105449}
   - component: {fileID: 435105448}
+  - component: {fileID: 435105451}
   m_Layer: 5
   m_Name: Level9
   m_TagString: Untagged
@@ -1560,6 +1595,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435105446}
   m_CullTransparentMesh: 1
+--- !u!114 &435105451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435105446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99e4fbdb17bfa41a467f0b1f7aef23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScoreGoals: 000000000000000000000000
+  level: 8
+  ButtonAndStarObject: {fileID: 435105446}
+  currentHighScore: 0
 --- !u!1 &464841424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1691,7 @@ GameObject:
   - component: {fileID: 488530662}
   - component: {fileID: 488530661}
   - component: {fileID: 488530660}
+  - component: {fileID: 488530663}
   m_Layer: 5
   m_Name: Level8
   m_TagString: Untagged
@@ -1754,6 +1806,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488530658}
   m_CullTransparentMesh: 1
+--- !u!114 &488530663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488530658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99e4fbdb17bfa41a467f0b1f7aef23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScoreGoals: 000000000000000000000000
+  level: 7
+  ButtonAndStarObject: {fileID: 488530658}
+  currentHighScore: 0
 --- !u!1 &514203185
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1909,7 @@ GameObject:
   - component: {fileID: 516536565}
   - component: {fileID: 516536564}
   - component: {fileID: 516536563}
+  - component: {fileID: 516536566}
   m_Layer: 5
   m_Name: Level10
   m_TagString: Untagged
@@ -1967,6 +2036,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516536561}
   m_CullTransparentMesh: 1
+--- !u!114 &516536566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516536561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99e4fbdb17bfa41a467f0b1f7aef23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScoreGoals: 000000000000000000000000
+  level: 9
+  ButtonAndStarObject: {fileID: 516536561}
+  currentHighScore: 0
 --- !u!1 &539840187
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,6 +3297,7 @@ GameObject:
   - component: {fileID: 963805025}
   - component: {fileID: 963805024}
   - component: {fileID: 963805023}
+  - component: {fileID: 963805026}
   m_Layer: 5
   m_Name: Level7
   m_TagString: Untagged
@@ -3326,6 +3412,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963805021}
   m_CullTransparentMesh: 1
+--- !u!114 &963805026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963805021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff99e4fbdb17bfa41a467f0b1f7aef23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelScoreGoals: d0070000a00f000088130000
+  level: 6
+  ButtonAndStarObject: {fileID: 963805021}
+  currentHighScore: 0
 --- !u!1 &1031286755
 GameObject:
   m_ObjectHideFlags: 0

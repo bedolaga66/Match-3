@@ -43,8 +43,12 @@ public class Dot : MonoBehaviour
     public GameObject columnArrow;
     public GameObject colorBomb;
     public GameObject adjacentMarker;
-    
-    
+
+    private GameObject fDot;
+    private GameObject sDot;
+    private Vector2 fDotPos;
+    private Vector2 sDotPos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +96,7 @@ public class Dot : MonoBehaviour
             mySprite.color = new Color(1f, 1f, 1f, .2f);
         }
         */
+        FirstDotSelected();
         targetX = column;
         targetY = row;
         if(Mathf.Abs(targetX - transform.position.x) > .1)
@@ -176,7 +181,24 @@ public class Dot : MonoBehaviour
         
     }
 
-    
+    private void FirstDotSelected()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            fDotPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log(fDotPos);
+            if(Mathf.Round(fDotPos.x) < (Mathf.Round(fDotPos.x) + 0.5f) && Mathf.Round(fDotPos.x) > (Mathf.Round(fDotPos.x) - 0.5f))
+            {
+                fDotPos.x = Mathf.Round(fDotPos.x);
+            }
+            if (Mathf.Round(fDotPos.y) < (Mathf.Round(fDotPos.y) + 0.5f) && Mathf.Round(fDotPos.y) > (Mathf.Round(fDotPos.y) - 0.5f))
+            {
+                fDotPos.y = Mathf.Round(fDotPos.y);
+            }
+            Debug.Log(fDotPos);
+        }
+    }
+
     private void OnMouseDown()
     {
        //Destroy hint

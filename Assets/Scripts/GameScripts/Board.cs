@@ -642,7 +642,7 @@ public class Board : MonoBehaviour
         {
             for(int j = 0; j < height; j++)
             {
-                if (allDots[i, j] != null)
+                if (allDots[i, j] != null && allDots[i,j] != blankSpaces[i,j])
                 {
                     //Rights on the board
                     if (i < width - 2)
