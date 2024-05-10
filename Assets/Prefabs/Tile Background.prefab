@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5802971234144119038}
   m_Layer: 0
   m_Name: Tile Background
-  m_TagString: Untagged
+  m_TagString: BackgroundTIle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d469b42e1ac1d40bbdb90e46e3bb8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteAfterOneHit: {fileID: 0}
   hitPoints: 1
 --- !u!114 &-5802971234144119038
 MonoBehaviour:

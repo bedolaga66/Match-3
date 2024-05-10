@@ -16,6 +16,7 @@ TagManager:
   - Color
   - Breakable
   - Board
+  - BackgroundTIle
   layers:
   - Default
   - TransparentFX
