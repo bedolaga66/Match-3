@@ -589,7 +589,7 @@ public class Board : MonoBehaviour
         
         yield return new WaitForSeconds(refillDelay);
         RefillBoard();
-        yield return new WaitForSeconds(refillDelay);
+        yield return new WaitForSeconds(refillDelay*2);
         while (MatchesOnBoard())
         {
             //yield return new WaitForSeconds(refillDelay);

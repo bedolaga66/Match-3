@@ -7,11 +7,13 @@ public class FindMatches : MonoBehaviour
 {
     private Board board;
     public List<GameObject> currentMatches = new List<GameObject>();
+    private Dot otherDot;
 
     // Start is called before the first frame update
     void Start()
     {
         board = FindObjectOfType<Board>();
+        otherDot = FindObjectOfType<Dot>();
     }
 
     public void FindAllMatches()
@@ -79,6 +81,39 @@ public class FindMatches : MonoBehaviour
         return currentDots;
     }
 
+    private List<GameObject> ChainAdjacentBomb(Dot dot)
+    {
+        List<GameObject> currentDots = new List<GameObject>();
+        if (dot.isAdjacentBomb)
+        {
+            currentMatches.Union(GetAdjacentPieces(dot.column, dot.row));
+        }
+
+        return currentDots;
+    }
+
+    private List<GameObject> ChainRowBomb(Dot dot)
+    {
+        List<GameObject> currentDots = new List<GameObject>();
+        if (dot.isRowBomb)
+        {
+            currentMatches.Union(GetRowPieces(dot.row));
+        }
+
+        return currentDots;
+    }
+
+    private List<GameObject> ChainColumnBomb(Dot dot)
+    {
+        List<GameObject> currentDots = new List<GameObject>();
+        if (dot.isColumnBomb)
+        {
+            currentMatches.Union(GetColumnPieces(dot.column));
+        }
+
+        return currentDots;
+    }
+
     private void AddToListAndMatch(GameObject dot)
     {
         if (!currentMatches.Contains(dot))
@@ -135,6 +170,18 @@ public class FindMatches : MonoBehaviour
 
                                     GetNearbyPieces(leftDot, currentDot, rightDot);
                                 }
+                                if (currentDotDot.isRowBomb)
+                                {
+                                    currentMatches.Union(ChainRowBomb(currentDotDot));
+                                }
+                                if (currentDotDot.isColumnBomb)
+                                {
+                                    currentMatches.Union(ChainColumnBomb(currentDotDot));
+                                }
+                                if (currentDotDot.isAdjacentBomb)
+                                {
+                                    currentMatches.Union(ChainAdjacentBomb(currentDotDot));
+                                }
                             }
                         }
                     }
@@ -188,12 +235,78 @@ public class FindMatches : MonoBehaviour
                     {
                         //Set that dot to be matched
                         board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+                        
                     }
                 }
             }
         }
     }
 
+    public void MatchPiecesOfColorAndRowBomb(string color)
+    {
+        for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
+                //Check if that piece exists
+                if (board.allDots[i, j] != null)
+                {
+                    //Check the tag on that dot
+                    if (board.allDots[i, j].tag == color)
+                    {
+                        //Set that dot to be matched
+                        board.allDots[i, j].GetComponent<Dot>().MakeRowBomb();
+                        board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+
+                    }
+                }
+            }
+        }
+    }
+
+    public void MatchPiecesOfColorAndColumnBomb(string color)
+    {
+        for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
+                //Check if that piece exists
+                if (board.allDots[i, j] != null)
+                {
+                    //Check the tag on that dot
+                    if (board.allDots[i, j].tag == color)
+                    {
+                        //Set that dot to be matched
+                        board.allDots[i, j].GetComponent<Dot>().MakeColumnBomb();
+                        board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+
+                    }
+                }
+            }
+        }
+    }
+
+    public void MatchPiecesOfColorAndAdjacentBomb(string color)
+    {
+        for (int i = 0; i < board.width; i++)
+        {
+            for (int j = 0; j < board.height; j++)
+            {
+                //Check if that piece exists
+                if (board.allDots[i, j] != null)
+                {
+                    //Check the tag on that dot
+                    if (board.allDots[i, j].tag == color)
+                    {
+                        //Set that dot to be matched
+                        board.allDots[i, j].GetComponent<Dot>().MakeAdjacentBomb();
+                        board.allDots[i, j].GetComponent<Dot>().isMatched = true;
+
+                    }
+                }
+            }
+        }
+    }
 
     List<GameObject> GetAdjacentPieces(int column, int row)
     {
@@ -261,6 +374,7 @@ public class FindMatches : MonoBehaviour
             //Moved thing matched?
             if (board.currentDot.isMatched && board.currentDot.tag == matchType.color)
             {
+                Dot otherDot = board.currentDot.otherDot.GetComponent<Dot>();
                 //Make it unmatched
                 board.currentDot.isMatched = false;      //????                             //BUG WITH 3-4-5 FALL & NO-MATCH
                 //Decide what king of bomb to make
@@ -277,7 +391,9 @@ public class FindMatches : MonoBehaviour
                 }
                 */
                 if((board.currentDot.swipeAngle > -45 && board.currentDot.swipeAngle <= 45)
-                    || (board.currentDot.swipeAngle < -135 && board.currentDot.swipeAngle >= 135))
+                    || (board.currentDot.swipeAngle < -135 && board.currentDot.swipeAngle >= 135)
+                    || (Mathf.Abs(board.currentDot.transform.position.x - otherDot.transform.position.x) == 1 
+                    && Mathf.Abs(board.currentDot.transform.position.y - otherDot.otherDot.transform.position.y) == 0))
                 {
                     board.currentDot.MakeRowBomb();
                 }
@@ -285,6 +401,7 @@ public class FindMatches : MonoBehaviour
                 {
                     board.currentDot.MakeColumnBomb();
                 }
+
             }
             //Is other thing matched?
             else if (board.currentDot.otherDot != null)
@@ -309,7 +426,9 @@ public class FindMatches : MonoBehaviour
                     */
 
                     if ((board.currentDot.swipeAngle > -45 && board.currentDot.swipeAngle <= 45)
-                    || (board.currentDot.swipeAngle < -135 && board.currentDot.swipeAngle >= 135))
+                    || (board.currentDot.swipeAngle < -135 && board.currentDot.swipeAngle >= 135)
+                    || (Mathf.Abs(board.currentDot.transform.position.x - otherDot.transform.position.x) == 1
+                            && Mathf.Abs(board.currentDot.transform.position.y - otherDot.transform.position.y) == 0))
                     {
                         otherDot.MakeRowBomb();
                     }
