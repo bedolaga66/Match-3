@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Dot : MonoBehaviour
@@ -18,6 +19,8 @@ public class Dot : MonoBehaviour
     public int targetY;
 
     public bool isMatched = false;
+
+    public bool coroutineWorking = false;
 
     private HintManager hintManager;
 
@@ -159,53 +162,69 @@ public class Dot : MonoBehaviour
 
     public IEnumerator CheckMoveCo()
     {
+        
         if (isColorBomb)
         {
+            coroutineWorking = true;
             //This piece is a color bomb, and other piece is the color to destroy
             if (otherDot.GetComponent<Dot>().isRowBomb)
             {
                 findMatches.MatchPiecesOfColorAndRowBomb(otherDot.tag);
+                
+                findMatches.currentMatches.Union(findMatches.ChainRowBomb());
+
                 isMatched = true;
             }
             else if (otherDot.GetComponent<Dot>().isColumnBomb)
             {
                 findMatches.MatchPiecesOfColorAndColumnBomb(otherDot.tag);
+
+                findMatches.currentMatches.Union(findMatches.ChainColumnBomb());
+
                 isMatched = true;
             }
             else if (otherDot.GetComponent<Dot>().isAdjacentBomb)
             {
                 findMatches.MatchPiecesOfColorAndAdjacentBomb(otherDot.tag);
+
+                findMatches.currentMatches.Union(findMatches.ChainAdjacentBomb());
+
                 isMatched = true;
             }
             else {
                 findMatches.MatchPiecesOfColor(otherDot.tag);
                 isMatched = true;
             }
-            
-            
+            coroutineWorking = false;
+
         }
         else if (otherDot.GetComponent<Dot>().isColorBomb)
         {
+            coroutineWorking = true;
             //The other piece is a color bomb,and this piece have color to destroy
             if (this.gameObject.GetComponent<Dot>().isRowBomb)
             {
                 findMatches.MatchPiecesOfColorAndRowBomb(this.gameObject.tag);
+                findMatches.currentMatches.Union(findMatches.ChainRowBomb());
                 otherDot.GetComponent<Dot>().isMatched = true;
             }
             else if (this.gameObject.GetComponent<Dot>().isColumnBomb)
             {
                 findMatches.MatchPiecesOfColorAndColumnBomb(this.gameObject.tag);
+                findMatches.currentMatches.Union(findMatches.ChainColumnBomb());
                 otherDot.GetComponent<Dot>().isMatched = true;
             }
             else if (this.gameObject.GetComponent<Dot>().isAdjacentBomb)
             {
                 findMatches.MatchPiecesOfColorAndAdjacentBomb(this.gameObject.tag);
+                findMatches.currentMatches.Union(findMatches.ChainAdjacentBomb());
                 otherDot.GetComponent<Dot>().isMatched = true;
             }
             else {
                 findMatches.MatchPiecesOfColor(this.gameObject.tag);
                 otherDot.GetComponent<Dot>().isMatched = true;
             }
+            coroutineWorking = false;
         }
         
         yield return new WaitForSeconds(.5f);
@@ -236,6 +255,7 @@ public class Dot : MonoBehaviour
             //otherDot = null;
         }
         
+
     }
 
     //public IEnumerator CheckMoveCo2(Dot dot1, GameObject dot2)

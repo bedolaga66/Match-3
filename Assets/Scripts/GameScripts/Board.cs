@@ -48,7 +48,7 @@ public class Board : MonoBehaviour
     public GameObject[] dots;
     public GameObject destroyEffect;
     public TileType[] boardLayout;
-    private bool[,] blankSpaces;
+    public bool[,] blankSpaces;
     private BackgroundTile[,] breakableTiles;
     public GameObject[,] allDots;
 
@@ -461,6 +461,7 @@ public class Board : MonoBehaviour
             Destroy(allDots[column, row]);
             scoreManager.IncreaseScore(basePieceValue * streakValue);
             allDots[column, row] = null;
+            Debug.Log("DestroyMatchesAt worked fine");
         }
     }
 
@@ -482,7 +483,7 @@ public class Board : MonoBehaviour
                 }
             }
         }
-        
+        Debug.Log("DestroyMatches worked fine");
         StartCoroutine(DecreaseRowCo2());
     }
 
@@ -589,9 +590,10 @@ public class Board : MonoBehaviour
         
         yield return new WaitForSeconds(refillDelay);
         RefillBoard();
-        yield return new WaitForSeconds(refillDelay*2);
+        yield return new WaitForSeconds(refillDelay);
         while (MatchesOnBoard())
         {
+            Debug.Log("Matches are on board");
             //yield return new WaitForSeconds(refillDelay);
             streakValue++;
             DestroyMatches();
