@@ -603,7 +603,7 @@ public class Board : MonoBehaviour
                 {
                     if (allDots[i, j].GetComponent<Dot>().isMatched)
                     {
-                        yield return new WaitForSeconds(refillDelay);
+                        yield return new WaitForSeconds(0.5f*refillDelay);
                         DestroyMatches();
                     }
                 }

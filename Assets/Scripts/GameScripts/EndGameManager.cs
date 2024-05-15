@@ -17,7 +17,8 @@ public class EndGameRequiremenets
 
 public class EndGameManager : MonoBehaviour
 {
-    
+    public int currentRaiseValue = 10;
+    public ScoreManager scoreManager;
     public GameObject movesLabel;
     //public GameObject timeLabel; //FOR TIME INSTEAD OF MOVES
     public Text counter;
@@ -31,6 +32,7 @@ public class EndGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scoreManager = FindObjectOfType<ScoreManager>();
         board = FindObjectOfType<Board>();
         SetGameType();
         SetupGame();
@@ -76,6 +78,7 @@ public class EndGameManager : MonoBehaviour
             {
                 LoseGame();
             }
+            
         }
         
     }
@@ -100,9 +103,22 @@ public class EndGameManager : MonoBehaviour
         FadePanelController fade = FindFirstObjectByType<FadePanelController>();
         fade.GameOver();
     }
-    // Update is called once per frame
-    void Update()
+    
+    public IEnumerator WinGameAndMovesLeft()
     {
-        
+        board.currentState = GameState.wait;
+        while(currentCounterValue > 0)
+        {
+            
+            scoreManager.IncreaseScore(currentRaiseValue);
+            yield return new WaitForSeconds(0.2f);
+            scoreManager.scoreText.text = scoreManager.score.ToString() + "/" + scoreManager.UpdateScoreToGoalAmount(scoreManager.score).ToString();
+            currentRaiseValue += 6;
+            
+            currentCounterValue--;
+            yield return new WaitForSeconds(0.2f);
+            counter.text = "" + currentCounterValue;
+        }
+        WinGame();
     }
 }

@@ -44,10 +44,23 @@ public class LevelButton2 : MonoBehaviour
                 if (gameData.saveData.isActive[i + 6])
                 {
                     Levels[i].interactable = true;
+                    //Levels[i].image.color = Color.yellow;
+                    
                 }
                 else if (!gameData.saveData.isActive[i + 6])
                 {
                     Levels[i].interactable = false;
+                }
+            }
+            for (int i = 0; i < Levels.Length - 1; i++)
+            {
+                if (Levels[i + 1].interactable)
+                {
+                    Levels[i].image.color = Color.green;
+                }
+                else
+                {
+                    continue;
                 }
             }
         }

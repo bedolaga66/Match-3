@@ -88,7 +88,11 @@ public class GoalManager : MonoBehaviour
             {
                 if (endGame != null)
                 {
-                    endGame.WinGame();
+                    if (endGame.currentCounterValue > 0 && board.currentState == GameState.wait)
+                    {
+                        StartCoroutine(endGame.WinGameAndMovesLeft());
+                    }
+                    //endGame.WinGame();
                 }
                 Debug.Log("U win");
             }

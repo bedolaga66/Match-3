@@ -31,20 +31,17 @@ MonoBehaviour:
   - {fileID: 1419257923348453666, guid: ee3e99aa963542a498e1f79f397e6cbb, type: 3}
   - {fileID: 7738905053625909627, guid: a73dfaf5de2cc4f4cb5e74e5add8b8e0, type: 3}
   - {fileID: 8753563593462560412, guid: 0d4a32d12986b9a42903d493e8f441c8, type: 3}
-  - {fileID: 4342755759734752344, guid: 81385ff96111039419306475f4dbf2bf, type: 3}
-  - {fileID: 5481469874351939755, guid: 9417598a39da6af48abe31b0e2821de7, type: 3}
-  - {fileID: 1856077114820646817, guid: 810b77c0cf5951e48bd71a9e1ed4dc44, type: 3}
   scoreGoals: d0070000ac0d000094110000
   endGameRequiremenets:
     gameType: 0
     counterValue: 47
   levelGoals:
   - numberNeeded: 15
-    numberCollected: 0
+    numberCollected: 9
     goalSprite: {fileID: 21300000, guid: 1cb8e456a7bc6a14d9f9ea8f717c98d5, type: 3}
     matchValue: Orange
   - numberNeeded: 12
-    numberCollected: 0
+    numberCollected: 1
     goalSprite: {fileID: 21300000, guid: d6185821bde55ef4aad21d9328c264e7, type: 3}
     matchValue: Green
   - numberNeeded: 4
@@ -52,6 +49,6 @@ MonoBehaviour:
     goalSprite: {fileID: 21300000, guid: f2c6e16893bf33b4eb277f15ec7f0fa9, type: 3}
     matchValue: Breakable
   - numberNeeded: 17
-    numberCollected: 0
+    numberCollected: 7
     goalSprite: {fileID: 21300000, guid: 13d6fcbc24966cb47b02e8a7737be43f, type: 3}
     matchValue: Blue

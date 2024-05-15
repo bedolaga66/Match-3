@@ -362,6 +362,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b85126876c58ac5408748e02d0f0e6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRaiseValue: 10
+  scoreManager: {fileID: 0}
   movesLabel: {fileID: 1932324278}
   counter: {fileID: 222976651}
   requiremenets:
@@ -1495,7 +1497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 0
-  m_AspectRatio: 3.0405412
+  m_AspectRatio: 3.0400674
 --- !u!114 &388751196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2847,7 +2849,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1119810235}
         m_TargetAssemblyTypeName: InGameManageButtons, Assembly-CSharp
-        m_MethodName: BackToMenu
+        m_MethodName: BackToMenuFromLosePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3518,7 +3520,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1119810235}
         m_TargetAssemblyTypeName: InGameManageButtons, Assembly-CSharp
-        m_MethodName: BackToMenu
+        m_MethodName: BackToMenuFromIntroGoals
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3999,6 +4001,7 @@ MonoBehaviour:
   basePieceValue: 20
   refillDelay: 0.5
   scoreGoals: f4010000e8030000d0070000
+  matchesExist: 0
 --- !u!4 &1640757154
 Transform:
   m_ObjectHideFlags: 0
