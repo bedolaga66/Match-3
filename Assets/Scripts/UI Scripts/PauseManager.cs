@@ -78,6 +78,13 @@ public class PauseManager : MonoBehaviour
         paused = !paused;
     }
     public void ExitGame() {
-        SceneManager.LoadScene(5);
+        if(board.level > 0 && board.level <= 5)
+        {
+            SceneManager.LoadScene(5);
+        }
+        if (board.level > 5 && board.level <= 11)
+        {
+            SceneManager.LoadScene(7);
+        }
     }
 }

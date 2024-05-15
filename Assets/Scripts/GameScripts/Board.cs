@@ -69,6 +69,9 @@ public class Board : MonoBehaviour
 
     public int[] scoreGoals;
 
+    public bool matchesExist;
+
+
     private void Awake()
     {
         if(PlayerPrefs.HasKey("Current Level"))
@@ -103,6 +106,7 @@ public class Board : MonoBehaviour
         SetUp();
         currentState = GameState.pause;
     }
+
 
     public void GenerateBlankSpaces()
     {
@@ -461,7 +465,7 @@ public class Board : MonoBehaviour
             Destroy(allDots[column, row]);
             scoreManager.IncreaseScore(basePieceValue * streakValue);
             allDots[column, row] = null;
-            Debug.Log("DestroyMatchesAt worked fine");
+            //Debug.Log("DestroyMatchesAt worked fine");
         }
     }
 
@@ -483,7 +487,8 @@ public class Board : MonoBehaviour
                 }
             }
         }
-        Debug.Log("DestroyMatches worked fine");
+        
+        //Debug.Log("DestroyMatches worked fine");
         StartCoroutine(DecreaseRowCo2());
     }
 
@@ -543,6 +548,7 @@ public class Board : MonoBehaviour
         {
             for(int j = 0; j < height; j++)
             {
+
                 if (allDots[i,j] == null && !blankSpaces[i,j])
                 {
                     Vector2 tempPosition = new Vector2(i, j + offSet);
@@ -561,7 +567,10 @@ public class Board : MonoBehaviour
                     piece.GetComponent<Dot>().column = i;
                 }
             }
+            
         }
+        Debug.Log("refilled");
+        StartCoroutine(DestroyM());
     }
 
     private bool MatchesOnBoard()
@@ -583,7 +592,24 @@ public class Board : MonoBehaviour
         return false;
     }
 
-
+    private IEnumerator DestroyM()
+    {
+        findMatches.FindAllMatches();
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allDots[i, j] != null)
+                {
+                    if (allDots[i, j].GetComponent<Dot>().isMatched)
+                    {
+                        yield return new WaitForSeconds(refillDelay);
+                        DestroyMatches();
+                    }
+                }
+            }
+        }
+    }
 
     private IEnumerator FillBoardCo()
     {
@@ -591,11 +617,13 @@ public class Board : MonoBehaviour
         yield return new WaitForSeconds(refillDelay);
         RefillBoard();
         yield return new WaitForSeconds(refillDelay);
+
         while (MatchesOnBoard())
         {
             Debug.Log("Matches are on board");
-            //yield return new WaitForSeconds(refillDelay);
+            yield return new WaitForSeconds(refillDelay);
             streakValue++;
+            yield return new WaitForSeconds(refillDelay);
             DestroyMatches();
             //while (MatchesOnBoard())
             //{
@@ -603,10 +631,11 @@ public class Board : MonoBehaviour
             //    DestroyMatches();
             //}
             //yield break;
-            yield return new WaitForSeconds(2 * refillDelay);
-            
-        }
 
+            yield return new WaitForSeconds(refillDelay);
+            //matchesExist = MatchesOnBoard();
+        }
+        
         currentDot = null;
         yield return new WaitForSeconds(refillDelay);
 

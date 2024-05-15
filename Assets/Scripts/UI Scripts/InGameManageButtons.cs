@@ -51,11 +51,11 @@ public class InGameManageButtons : MonoBehaviour
     public void BackToMenu()
     {
         GetCurrentLevel();
-        if(level >= 0 && level < 5)
+        if(level >= 0 && level <= 5)
         {
             SceneManager.LoadScene(menuScene1);
         }
-        else if(level >= 5 && level <= 11) SceneManager.LoadScene(menuScene2);
+        else if(level > 5 && level <= 11) SceneManager.LoadScene(menuScene2);
     }
 
 }

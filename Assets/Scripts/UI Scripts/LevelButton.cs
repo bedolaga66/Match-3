@@ -57,6 +57,7 @@ public class LevelButton : MonoBehaviour
                 if (Levels[i + 1].interactable)
                 {
                     Levels[i].image.color = Color.green;
+                    Levels[i + 1].image.color = Color.yellow;
                 }
                 else
                 {
