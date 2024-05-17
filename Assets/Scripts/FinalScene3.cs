@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Dialog2Scene : MonoBehaviour
+public class Final3Scene : MonoBehaviour
 {
-    public void OnClickLoadScene3()
+    public void OnClickLoadScene10()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(10);
     }
 }
