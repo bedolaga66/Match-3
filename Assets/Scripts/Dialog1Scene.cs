@@ -7,6 +7,6 @@ public class Dialog1Scene : MonoBehaviour
 {
     public void OnClickLoadScene2()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(2);
     }
 }

@@ -38,7 +38,7 @@ public class LevelButton : MonoBehaviour
     {
         if(gameData != null)
         {
-            
+            Levels[0].interactable = true;
             for (int i = 0; i < Levels.Length; i++)
             {
                 if (gameData.saveData.isActive[i])

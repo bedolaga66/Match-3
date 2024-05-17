@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Play1Scene : MonoBehaviour
+public class TropaModified : MonoBehaviour
 {
-    public void OnClickPlay1Scene()
+    public void OnClickNextTropa2()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(6);
     }
 }
