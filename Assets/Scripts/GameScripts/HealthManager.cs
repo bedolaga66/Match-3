@@ -121,22 +121,23 @@ public class HealthManager : MonoBehaviour
             else if (timer1 == timeElapsed)
             {
                 timer1 = startingTime;
-                health.text = (int.Parse(health.text) + 1).ToString();
             }
             else if (timer1 < timeElapsed)
             {
                 float tTimeElapsed = timeElapsed / startingTime;
-                if(tTimeElapsed == 5 || tTimeElapsed > 5)
+                if (tTimeElapsed == 5 || tTimeElapsed > 5)
                 {
                     health.text = 5.ToString();
                     timer1 = 0f;
                     yield break;
                 }
-                else if(tTimeElapsed < 5)
+                else if (tTimeElapsed < 5)
                 {
                     int currHealth = int.Parse(health.text);
                     currHealth += (int)tTimeElapsed;
-                    if(currHealth == 5 || currHealth > 5) { health.text = 5.ToString();
+                    if (currHealth == 5 || currHealth > 5)
+                    {
+                        health.text = 5.ToString();
                         yield break;
                     }
                     else
@@ -146,21 +147,22 @@ public class HealthManager : MonoBehaviour
                 }
             }
         }
-
+        else
+        {
             timer1 = startingTime;
+        }
+        do
+        {
+            timer1 -= Time.deltaTime;
 
-            do
-            {
-                timer1 -= Time.deltaTime;
+            FormatText1();
 
-                FormatText1();
-
-                yield return null;
+            yield return null;
 
 
-            }
-            while (timer1 > 0);
-            health.text = (int.Parse(health.text) + 1).ToString();
+        }
+        while (timer1 > 0);
+        health.text = (int.Parse(health.text) + 1).ToString();
 
         
     }
