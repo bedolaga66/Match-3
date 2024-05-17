@@ -7,6 +7,6 @@ public class TropaModified : MonoBehaviour
 {
     public void OnClickNextTropa2()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6);
     }
 }
