@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Final1Scene.cs.meta
+guid: 823fbbe7e72132b47be25f48b7d04937
+========
+guid: 1221701144e050248addcd0a990f72fb
+>>>>>>>> 57d59fda40eaab0d15190a93471d49e6b14c8051:Assets/Scripts/GameScripts/HealthManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
