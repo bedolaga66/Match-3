@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/LoadScene.unity
+    guid: 8f952e24a3b1aea42b5ecb7d4b741749
+  - enabled: 1
+    path: Assets/Scenes/PlayScene.unity
+    guid: b6cb6b27b3626494c9335d9135def488
+  - enabled: 1
+    path: Assets/Scenes/Dialog1Scene.unity
+    guid: f70724ebe07b5464db141a9485648dfa
+  - enabled: 1
+    path: Assets/Scenes/Dialog2Scene.unity
+    guid: a629ecbf3d2dbee489600205596bd48f
+  - enabled: 1
+    path: Assets/Scenes/Dialog3Scene.unity
+    guid: 542cf413373f9964baedf1e9f083911e
+  - enabled: 0
+    path: Assets/Scenes/Tropa1Scene.unity
+    guid: 52a17e3d733234541bc91b7cc3b054c4
+  - enabled: 0
+    path: Assets/Scenes/ChooseScene.unity
+    guid: 86c50364f7b4e184db2833a42445206f
+  - enabled: 1
+    path: Assets/Scenes/TropaModified.unity
+    guid: b4246b5d4403f114ca334a3303f83856
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Tropa2Scene.unity
+    guid: c77cd87656934154683ce0c61552391f
+  - enabled: 1
+    path: Assets/Scenes/FinalScene.unity
+    guid: 968416fc264b1984aadc27e1350ae200
+  - enabled: 1
+    path: Assets/Scenes/FinalScene2.unity
+    guid: e698ae9db826b6e4887745d80363e361
+  - enabled: 1
+    path: Assets/Scenes/Final3Scene.unity
+    guid: d64e3f1616de76641bc4f8651b62d4a7
+  - enabled: 1
+    path: Assets/Scenes/Final4Scene.unity
+    guid: e779002bed6a1f34ba2e4977a5fc4b3f
+  m_configObjects: {}
