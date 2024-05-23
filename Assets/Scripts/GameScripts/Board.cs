@@ -561,6 +561,14 @@ public class Board : MonoBehaviour
                 }
             }
         }
+<<<<<<< Updated upstream
+=======
+        Debug.Log("refilled");
+        if (!IsDeadlocked())
+        {
+            StartCoroutine(DestroyM());
+        }
+>>>>>>> Stashed changes
     }
 
     private bool MatchesOnBoard()
@@ -582,7 +590,28 @@ public class Board : MonoBehaviour
         return false;
     }
 
+<<<<<<< Updated upstream
 
+=======
+    private IEnumerator DestroyM()
+    {
+        findMatches.FindAllMatches();
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                if (allDots[i, j] != null)
+                {
+                    if (allDots[i, j].GetComponent<Dot>().isMatched)
+                    {
+                        yield return new WaitForSeconds(0.5f * refillDelay);
+                        DestroyMatches();
+                    }
+                }
+            }
+        }
+    }
+>>>>>>> Stashed changes
 
     private IEnumerator FillBoardCo()
     {

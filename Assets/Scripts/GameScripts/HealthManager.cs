@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     public Text health;
-    float timer1 = 0f;
+    public float timer1;
     public float startingTime;
     public string timeString;
     public string timeExitString;
@@ -18,7 +18,8 @@ public class HealthManager : MonoBehaviour
     private void Awake()
     {
         GetCurrentHealth();
-        
+        GetElapsedTime();
+        GetTimerTime();
     }
 
     void Start()
@@ -38,6 +39,13 @@ public class HealthManager : MonoBehaviour
             StartTimer();
         }
         //PlayerPrefs.SetString("CurrentTime", DateTime.Now.ToString());
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.SetString("CurrentHealth", health.text);
+        PlayerPrefs.SetFloat("TimeLeft", timer1);
+        PlayerPrefs.SetString("TimeOut", DateTime.Now.ToString());
     }
 
     void OnApplicationQuit()
@@ -65,7 +73,7 @@ public class HealthManager : MonoBehaviour
     {
         if(PlayerPrefs.GetFloat("TimeLeft") == 0f)
         {
-            return;
+            timer1 = 0f;
         }
         else if(PlayerPrefs.GetFloat("TimeLeft") != 0f)
         {
@@ -110,10 +118,10 @@ public class HealthManager : MonoBehaviour
     }
     public IEnumerator Timer()
     {
-        GetElapsedTime();
         GetTimerTime();
-        if (PlayerPrefs.GetFloat("TimeLeft") != 0f)
+        if (timer1 > 0f)
         {
+<<<<<<< Updated upstream
             if (timer1 > timeElapsed)
             {
                 timer1 -= timeElapsed;
@@ -147,6 +155,59 @@ public class HealthManager : MonoBehaviour
             }
         }
 
+=======
+            GetTimerTime();
+            //if (timer1 > timeElapsed)
+            //{
+            //    timer1 -= timeElapsed;
+            //}
+            //else if (timer1 == timeElapsed)
+            //{
+            //    timer1 = startingTime;
+            //}
+            //else if (timer1 < timeElapsed)
+            //{
+            //    float tTimeElapsed = timeElapsed / startingTime;
+            //    if (tTimeElapsed >= 5)
+            //    {
+            //        health.text = "5";
+            //        timer1 = 0f;
+            //        PlayerPrefs.SetFloat("TimeLeft", 0f);
+            //        PlayerPrefs.SetString("TimeOut", DateTime.Now.ToString());
+            //        yield break;
+            //    }
+            //    else
+            //    {
+            //        int currHealth = int.Parse(health.text);
+            //        int additionalLives = Mathf.FloorToInt(tTimeElapsed);
+            //        currHealth += additionalLives;
+
+            //        if (currHealth >= 5)
+            //        {
+            //            health.text = "5";
+            //            timer1 = 0f;
+            //            PlayerPrefs.SetFloat("TimeLeft", 0f);
+            //            PlayerPrefs.SetString("TimeOut", DateTime.Now.ToString());
+            //            yield break;
+            //        }
+            //        else
+            //        {
+            //            for (int i = 0; i < additionalLives; i++)
+            //            {
+            //                if (int.Parse(health.text) < 5)
+            //                    health.text = (int.Parse(health.text) + 1).ToString();
+            //                else
+            //                    break;
+            //            }
+            //        }
+            //    }
+            //}
+            //PlayerPrefs.SetFloat("TimeLeft", 0f);
+            //PlayerPrefs.SetString("TimeOut", DateTime.Now.ToString());
+        }
+        else if(timer1 <= 0f)
+        {
+>>>>>>> Stashed changes
             timer1 = startingTime;
 
             do
@@ -158,10 +219,26 @@ public class HealthManager : MonoBehaviour
                 yield return null;
 
 
+<<<<<<< Updated upstream
             }
             while (timer1 > 0);
             health.text = (int.Parse(health.text) + 1).ToString();
 
+=======
+        }
+        while (timer1 > 0);
+        timer1 = 0f;
+        PlayerPrefs.SetFloat("TimeLeft", 0f);
+        if (int.Parse(health.text) < 5)
+        {
+            health.text = (int.Parse(health.text) + 1).ToString();
+        }
+        else
+        {
+            
+            yield break;
+        }
+>>>>>>> Stashed changes
         
     }
 

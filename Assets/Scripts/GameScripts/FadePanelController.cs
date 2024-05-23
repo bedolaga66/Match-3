@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FadePanelController : MonoBehaviour
 {
@@ -8,14 +9,27 @@ public class FadePanelController : MonoBehaviour
     public Animator panelAnim;
     public Animator gameInfoAnim;
     private Board board;
+    public Text noHealthText;
 
     public void OK()
     {
-        if (panelAnim != null && gameInfoAnim != null)
+        if (PlayerPrefs.HasKey("CurrentHealth"))
         {
-            panelAnim.SetBool("Out", true);
-            gameInfoAnim.SetBool("Out", true);
-            StartCoroutine(GameStartCo());
+            string currHealth = PlayerPrefs.GetString("CurrentHealth");
+            if (int.Parse(currHealth) != 0)
+            {
+                if (panelAnim != null && gameInfoAnim != null)
+                {
+                    panelAnim.SetBool("Out", true);
+                    gameInfoAnim.SetBool("Out", true);
+                    StartCoroutine(GameStartCo());
+                    PlayerPrefs.SetString("CurrentHealth", (int.Parse(currHealth) - 1).ToString());
+                }
+            }
+            else if(int.Parse(currHealth) == 0)
+            {
+                noHealthText.gameObject.SetActive(true);
+            }
         }
     }
 

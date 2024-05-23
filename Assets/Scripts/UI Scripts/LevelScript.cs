@@ -56,7 +56,7 @@ public class LevelScript : MonoBehaviour
         {
             levelCompleted = isLevelCompleted;
         }
-        if (currLevel < 11)
+        if (currLevel < 12)
         {
             gameData.saveData.isActive[currLevel + 1] = true;
             gameData.Save();
