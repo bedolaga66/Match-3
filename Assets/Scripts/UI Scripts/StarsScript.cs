@@ -34,7 +34,7 @@ public class StarsScript : MonoBehaviour
 
     public void LoadData()
     {
-        if (gameData != null && level < levelScoreGoals.Length)
+        if (gameData != null)
         {
             currentHighScore = gameData.saveData.highScores[level];
         }

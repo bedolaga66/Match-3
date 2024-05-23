@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = score.ToString() + "/" + UpdateScoreToGoalAmount(score).ToString();
+        scoreText.text = score.ToString();
         AddScoreResultsToGameData(board.level);
     }
 
