@@ -29,7 +29,7 @@ public class ScoreManager : MonoBehaviour
     public void IncreaseScore(int amountToIncrease)
     {
         score+=amountToIncrease;
-        UpdateBar();
+        //UpdateBar();
     }
 
     public int UpdateScoreToGoalAmount(int score)
@@ -53,30 +53,26 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void UpdateBar()
-    {
-        if (board != null && scoreBar != null)
-        {
-            int len = board.scoreGoals.Length;
-            scoreBar.fillAmount = (float)score / (float)board.scoreGoals[len - 1];
-        }
-    }
-
+    
     public void AddScoreResultsToGameData(int level)
     {
         if (board.currentState == GameState.win)
         {
             if (gameData != null)
             {
-                if (gameData.saveData.highScores[level] != 0 && gameData.saveData.highScores[level] < score)
-                    gameData.saveData.highScores[level] = score;
-                else if (gameData.saveData.highScores[level] > score) return;
-                else if (gameData.saveData.highScores[level] == 0) gameData.saveData.highScores[level] = score;
+                if (gameData.saveData.highScores.Length > level)
+                {
+                    if (gameData.saveData.highScores[level] != 0 && gameData.saveData.highScores[level] < score)
+                        gameData.saveData.highScores[level] = score;
+                    else if (gameData.saveData.highScores[level] > score) return;
+                    else if (gameData.saveData.highScores[level] == 0) gameData.saveData.highScores[level] = score;
+                }
             }
             gameData.Save();
 
         }
-        
+
     }
+
 
 }
