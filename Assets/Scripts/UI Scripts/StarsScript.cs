@@ -21,14 +21,13 @@ public class StarsScript : MonoBehaviour
     private World world;
 
     public int currentHighScore;
-
+    // Start is called before the first frame update
     void Start()
     {
-        board = GetComponent<Board>();
-        gameData = GetComponent<GameData>();
-        scoreManager = FindObjectOfType<ScoreManager>();
         world = FindObjectOfType<World>();
-
+        board = FindObjectOfType<Board>();
+        gameData = FindObjectOfType<GameData>();
+        scoreManager = FindObjectOfType<ScoreManager>();
         LoadData();
         MakeStarsActive();
     }
@@ -77,5 +76,7 @@ public class StarsScript : MonoBehaviour
             star2.SetActive(true);
             star3.SetActive(true);
         }
+        currentHighScore = 0;
     }
+    
 }

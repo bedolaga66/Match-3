@@ -19,12 +19,12 @@ public class SoundManager : MonoBehaviour
                 destroyNoise[clipToPlay].Play();
             }
         }
-        /*else
+        else
         {
             //Choose a random number
             int clipToPlay = Random.Range(0, destroyNoise.Length);
             //play that clip
             destroyNoise[clipToPlay].Play();
-        }*/
+        }
     }
 }

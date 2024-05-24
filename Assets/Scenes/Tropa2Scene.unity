@@ -894,7 +894,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243107184}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -3240,7 +3240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.009}
   m_AnchorMin: {x: 0.07645028, y: 0.038000003}
   m_AnchorMax: {x: 0.8954963, y: 0.943}
-  m_AnchoredPosition: {x: 0.5500126, y: 0.5654392}
+  m_AnchoredPosition: {x: 0.5500107, y: 0.5654392}
   m_SizeDelta: {x: -1.0999985, y: -4.8999996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &888725027
@@ -4074,8 +4074,8 @@ RectTransform:
   - {fileID: 431803084}
   - {fileID: 243107185}
   - {fileID: 1617025691}
-  - {fileID: 887921640}
   - {fileID: 2060355349}
+  - {fileID: 887921640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4248,6 +4248,8 @@ GameObject:
   - component: {fileID: 1570697880}
   - component: {fileID: 1570697879}
   - component: {fileID: 1570697878}
+  - component: {fileID: 1570697881}
+  - component: {fileID: 1570697882}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4329,6 +4331,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570697881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570697877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145d0734f7b7ed45b484a425affe7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1570697882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570697877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695b7e5ca7491774cb6fb1a46a8f4e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570970986
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,6 +5569,7 @@ GameObject:
   - component: {fileID: 2060355352}
   - component: {fileID: 2060355351}
   - component: {fileID: 2060355350}
+  - component: {fileID: 2060355353}
   m_Layer: 5
   m_Name: Mom_zayz
   m_TagString: Untagged
@@ -5557,17 +5584,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060355348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1478641960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.16744655, y: 0.707}
-  m_AnchorMax: {x: 0.5, y: 0.89736426}
-  m_AnchoredPosition: {x: -0.8300171, y: 2.75}
-  m_SizeDelta: {x: 1.6499939, y: 3.25}
+  m_AnchorMin: {x: 0.12814564, y: 0.72200006}
+  m_AnchorMax: {x: 0.5, y: 0.92200005}
+  m_AnchoredPosition: {x: -0.66893005, y: 0.034194946}
+  m_SizeDelta: {x: -14.956329, y: -3.5965042}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060355350
 MonoBehaviour:
@@ -5612,7 +5639,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2060355351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1570697882}
+        m_TargetAssemblyTypeName: ToFinalScene, Assembly-CSharp
+        m_MethodName: OnClickLoadFinalScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2060355351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5651,6 +5690,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060355348}
   m_CullTransparentMesh: 1
+--- !u!114 &2060355353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060355348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b145d0734f7b7ed45b484a425affe7b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2071534574
 GameObject:
   m_ObjectHideFlags: 0
