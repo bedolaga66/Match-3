@@ -37,13 +37,13 @@ MonoBehaviour:
   scoreGoals: e8030000d0070000b80b0000
   endGameRequiremenets:
     gameType: 0
-    counterValue: 35
+    counterValue: 30
   levelGoals:
   - numberNeeded: 15
-    numberCollected: 16
+    numberCollected: 0
     goalSprite: {fileID: 21300000, guid: 1cb8e456a7bc6a14d9f9ea8f717c98d5, type: 3}
     matchValue: Orange
   - numberNeeded: 15
-    numberCollected: 19
+    numberCollected: 3
     goalSprite: {fileID: 21300000, guid: e9e0660b8b2dce84980eec5f824afb2d, type: 3}
     matchValue: Purple
